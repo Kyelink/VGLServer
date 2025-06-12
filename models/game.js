@@ -9,6 +9,10 @@ const schema = new mongoose.Schema({
         unique: true,
         required: [true, "Please enter steam appid"]
     },
+    likes: {
+        type: Number,
+        default: 0
+    },
     description: {
         type: String,
         required: [true, "Please enter description"]
