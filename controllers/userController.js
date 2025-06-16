@@ -261,7 +261,6 @@ export const deleteAccount = asyncError(async (req, res, next) => {
 });
 
 export const forgetPassword = asyncError(async (req, res, next) => {
-  // console.log()
   const { email } = req.body;
   const user = await User.findOne({ email });
   if (!user) {
