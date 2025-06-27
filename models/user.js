@@ -97,4 +97,5 @@ schema.methods.generateToken = function () {
     expiresIn: "15d",
   });
 };
+
 export const User = mongoose.model("User", schema);

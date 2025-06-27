@@ -35,23 +35,14 @@ export const login = asyncError(async (req, res, next) => {
   }
   sendToken(user, res, user.username + " logged!", 200);
 });
+
 export const signup = asyncError(async (req, res, next) => {
   const { username, email, password, language, darkmode } = req.body;
   let user = await User.findOne({ email });
   if (user) {
     return next(new ErrorHandler("User already exist", 400));
   }
-
   let avatar = undefined;
-  if (req.file) {
-    const file = getDataUri(req.file);
-
-    const myCloud = await cloudinary.v2.uploader.upload(file.content);
-    avatar = {
-      url: myCloud.secure_url,
-      public_id: myCloud.public_id,
-    };
-  }
   user = await User.create({
     username,
     email,
@@ -73,7 +64,6 @@ export const getMyProfile = asyncError(async (req, res, next) => {
     user,
   });
 });
-
 export const logOut = asyncError((req, res, next) => {
   res
     .cookie("token", "", {
@@ -86,6 +76,8 @@ export const logOut = asyncError((req, res, next) => {
       message: "Logged Out",
     });
 });
+
+
 export const updateProfile = asyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id);
   if (!user) {
@@ -114,6 +106,10 @@ export const updateProfile = asyncError(async (req, res, next) => {
     message: "Profile Updated Successfully",
   });
 });
+
+
+
+
 export const addFavGame = asyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id);
   if (!user) {
@@ -236,30 +232,6 @@ export const updatePic = asyncError(async (req, res, next) => {
     message: "Avatar changed",
   });
 });
-
-export const deleteAccount = asyncError(async (req, res, next) => {
-  const user = await User.findById(req.user._id);
-  if (!user) {
-    return next(new ErrorHandler("no user found", 401));
-  }
-
-  if (user.avatar && user.avatar.public_id) {
-    await cloudinary.v2.uploader.destroy(user.avatar.public_id);
-  }
-  await user.deleteOne();
-
-  res
-  .cookie("token", "", {
-      ...cookieOptions,
-      expires: new Date(Date.now()),
-    })
-  .status(200)
-  .json({
-    success: true,
-    message: "Account deleted",
-  });
-});
-
 export const forgetPassword = asyncError(async (req, res, next) => {
   const { email } = req.body;
   const user = await User.findOne({ email });
@@ -312,5 +284,27 @@ export const resetPassword = asyncError(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: "Password changed successfully",
+  });
+});
+export const deleteAccount = asyncError(async (req, res, next) => {
+  const user = await User.findById(req.user._id);
+  if (!user) {
+    return next(new ErrorHandler("no user found", 401));
+  }
+
+  if (user.avatar && user.avatar.public_id) {
+    await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+  }
+  await user.deleteOne();
+
+  res
+  .cookie("token", "", {
+      ...cookieOptions,
+      expires: new Date(Date.now()),
+    })
+  .status(200)
+  .json({
+    success: true,
+    message: "Account deleted",
   });
 });

@@ -102,3 +102,5 @@ const schema = new mongoose.Schema({
 });
 
 export const Game = mongoose.model("Game", schema);
+
+

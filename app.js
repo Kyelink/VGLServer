@@ -290,11 +290,10 @@ const swaggerOptions = {
   },
   apis: ["./routes/*.js"], // files containing annotations as above
 };
-
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-
+// Pipeline logique
 app.use("/api/v1/user", user);
 app.use("/api/v1/game", game);
 app.use(errorMiddleware);

@@ -8,7 +8,7 @@ import {
   updateProfile,
 } from "../controllers/userController.js";
 import { errorMiddleware } from "../middlewares/error.js";
-import { User } from "../models/user.js"; // <- Importation nommée correcte
+import { User } from "../models/user.js";
 import { sendToken } from "../utils/features.js";
 // Mock précis de l'objet User
 jest.mock("../models/user.js", () => ({

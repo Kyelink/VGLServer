@@ -57,13 +57,13 @@ export const getRecommendedGames = asyncError(async (req, res, next) => {
   if (!user) {
     return next(new ErrorHandler("no user found", 401));
   }
-  const favTags = user.need_to_recalculate
-    ? calculateFavTag(user.fav_tags_list)
-    : user.top_fav_tags_list;
-  user.need_to_recalculate = false;
-  user.top_fav_tags_list = favTags;
+  const favTags = user.need_to_recalculate    //Si la liste de favoris a changé depuis le dernier calcul :
+    ? calculateFavTag(user.fav_tags_list)     //Calcul O(n*log(n)) car la liste des tops tags est obsolète 
+    : user.top_fav_tags_list;                 //Sinon lecture O(1) car la liste des tops tags est valide
+
+  user.need_to_recalculate = false;           //Dans tous les cas, plus besoin de recalculer les tops tags
+  user.top_fav_tags_list = favTags;           //On sauvegarde notre liste de tops tags, forcémment valide
   await user.save();
-  // console.log("recommended tags : " + JSON.stringify(favTags));
 
   let { offset } = req.query;
   const query = {
@@ -77,14 +77,15 @@ export const getRecommendedGames = asyncError(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    // favoritesTags: favTags,
     size: count,
     games,
   });
 });
+
+
 export const getSearchedGames = asyncError(async (req, res, next) => {
-  let { keyword, nsfw, offset } = req.query;
-  const query =
+  let { keyword, nsfw, offset } = req.query;      //On récupére, mot-clé, filtre NSFW, et numéro de page
+  const query =                                   //On formate notre query de recherche MongoDB
     nsfw === "true"
       ? {
           name: {
@@ -99,16 +100,18 @@ export const getSearchedGames = asyncError(async (req, res, next) => {
           },
           tags: { $nin: nsfwTags },
         };
-  const count = await Game.countDocuments(query);
-  const games = await Game.find(query, selector)
-    .skip(limit * offset)
-    .limit(limit);
-  res.status(200).json({
+  const count = await Game.countDocuments(query);  //On calcule la taille des jeux correspondants à notre query
+  const games = await Game.find(query, selector)   //On cherche les jeux correspondant à notre query
+    .skip(limit * offset)                          //On fixe le premier resultat de la page
+    .limit(limit);                                 //On fixe le dernier resultat de la page
+  res.status(200).json({                           //Et on renvoie les informations demandées
     success: true,
     size: count,
     games,
   });
 });
+
+
 export const createGame = asyncError(async (req, res, next) => {
   const {
     name,
@@ -163,7 +166,7 @@ export const scrapGame = asyncError(async (req, res, next) => {
 
   const res2 = await fetch(url);
   const html = await res2.text();
-  const $ = cheerio.load(html);
+  const $ = cheerio.load(html); 
 
   const tags = [];
   $(".glance_tags a").each((i, element) => {

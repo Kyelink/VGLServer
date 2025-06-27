@@ -61,7 +61,7 @@ router.post("/login", login);
  *     requestBody:
  *       required: true
  *       content:
- *         multipart/form-data:
+ *         application/json:
  *           schema:
  *             type: object
  *             required:
@@ -86,10 +86,6 @@ router.post("/login", login);
  *               darkmode:
  *                 type: boolean
  *                 example: true
- *               avatar:
- *                 type: string
- *                 format: binary
- *                 description: Image de profil (fichier)
  *     responses:
  *       201:
  *         description: Utilisateur inscrit avec succès
