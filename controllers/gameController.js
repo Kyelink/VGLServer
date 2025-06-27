@@ -12,7 +12,7 @@ const minTags = 5;
 const nsfwTags = ["Hentai", "Hentaï", "hentai", "hentaï", "Sex", "sex", "Adult","adult","porn","Porn","pornography","Pornography","sexual","Sexual",
     "Adult Content", "NSFW", "nsfw", "Nudity", "Sexual Content"
 ];
-const selector = "name platforms genres release_date header_image";
+const selector = "name platforms genres release_date header_image likes";
 
 const calculateFavTag = (tagList) => {
   const keys = Object.keys(tagList);
