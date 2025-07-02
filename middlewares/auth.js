@@ -4,6 +4,7 @@ import ErrorHandler from "../utils/errorHandler.js";
 import { asyncError } from "./error.js";
 
 export const isAuthenticated = asyncError(async (req, res, next) => {
+
   const { token } = req.cookies;
   if (!token) {
     return next(new ErrorHandler("No token", 401));

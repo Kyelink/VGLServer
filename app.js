@@ -3,8 +3,12 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/error.js";
 import game from "./routes/game.js";
 import user from "./routes/user.js";
+import dossierprojet from "./routes/dossierprojet.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
@@ -296,4 +300,24 @@ app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Pipeline logique
 app.use("/api/v1/user", user);
 app.use("/api/v1/game", game);
+// app.use("/api/v1/dossier", dossierprojet);
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// // Servir le dossier statique
+// app.use('/static', express.static(path.join(__dirname, 'dossierproj')));
+
+// app.get('/dossier', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'dossierproj', 'dossierproj.html'));
+// });
+
+
+const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
+
+app.use(express.static(path.join(__dirname, 'dossierproj')));
+
+app.get('/api/v1/dossier', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dossierproj', 'dossierproj.html'));
+});
 app.use(errorMiddleware);

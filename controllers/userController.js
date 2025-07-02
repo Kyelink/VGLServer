@@ -77,7 +77,6 @@ export const logOut = asyncError((req, res, next) => {
     });
 });
 
-
 export const updateProfile = asyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id);
   if (!user) {
@@ -106,9 +105,6 @@ export const updateProfile = asyncError(async (req, res, next) => {
     message: "Profile Updated Successfully",
   });
 });
-
-
-
 
 export const addFavGame = asyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id);
@@ -180,7 +176,6 @@ export const removeFavGame = asyncError(async (req, res, next) => {
   user.fav_tags_list = cp;
   user.need_to_recalculate = true;
   await user.save();
-
 
   const game = await Game.findById(req.params.id);
   game.likes--;
@@ -291,20 +286,18 @@ export const deleteAccount = asyncError(async (req, res, next) => {
   if (!user) {
     return next(new ErrorHandler("no user found", 401));
   }
-
   if (user.avatar && user.avatar.public_id) {
     await cloudinary.v2.uploader.destroy(user.avatar.public_id);
   }
   await user.deleteOne();
-
   res
-  .cookie("token", "", {
+    .cookie("token", "", {
       ...cookieOptions,
       expires: new Date(Date.now()),
     })
-  .status(200)
-  .json({
-    success: true,
-    message: "Account deleted",
-  });
+    .status(200)
+    .json({
+      success: true,
+      message: "Account deleted",
+    });
 });

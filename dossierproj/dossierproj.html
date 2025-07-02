@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier Projet CDA - VGL (Video Games Library)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      /* background-color: #f5f5f5; */
+      color: #333;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      /* margin: 2.5cm 2cm 2.5cm 3cm; */
+      /* background: white; */
+      padding: 0cm 1.5cm 0cm 2cm;
+      /* padding-left: ;
+      padding-bottom: ;
+      padding-top: ;
+      padding-right: ; */
+      /* border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    }
+
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #34495e;
+      border-left: 4px solid #3498db;
+      padding-left: 15px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #2c3e50;
+      margin-top: 25px;
+    }
+
+    h4 {
+      color: #7f8c8d;
+      margin-top: 20px;
+    }
+
+    .sommaire {
+      background: #ecf0f1;
+      /* background-image: url("./background2.png"); */
+      font-size: 14px;
+      padding: 5px 30px;
+      border-radius: 5px;
+      /* border: #333; */
+      margin: 20px 0;
+    }
+
+    .sommaire ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sommaire li {
+      padding: 5px 0;
+      /* border-top: 1px dotted #bdc3c7; */
+    }
+
+    .sommaire a {
+      text-decoration: none;
+      color: #2c3e50;
+    }
+
+    .sommaire a:hover {
+      color: #3498db;
+    }
+
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      white-space: nowrap;
+    }
+
+    /* .toc-list,
+        .toc-list ol {
+            list-style-type: none;
+        } */
+
+    .toc-list {
+      padding: 0;
+    }
+
+    .toc-list ul {
+      padding-inline-start: 2ch;
+    }
+
+    .toc-list>li>a {
+      font-weight: 900;
+      font-size: 85%;
+      margin-block-start: 0em;
+    }
+
+    .toc-list li>a {
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: auto max-content;
+      align-items: end;
+    }
+
+    .toc-list li>a>.title {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .toc-list li>a .leaders::after {
+      position: absolute;
+      /* font-size: 80%; */
+      padding-inline-start: .25ch;
+      content: " . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . ";
+      text-align: right;
+    }
+
+    .toc-list li>a>.page {
+      /* font-size: 80%; */
+      font-weight: bold;
+      min-width: 2ch;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .toc-list2 {
+      padding: 0;
+    }
+
+    .toc-list2 ul {
+      padding-inline-start: 2ch;
+    }
+
+    .toc-list2>li>a {
+      font-size: 85%;
+      font-weight: 650;
+      margin-block-start: -0.2em;
+    }
+
+    .toc-list2 li>a {
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: auto max-content;
+      align-items: end;
+    }
+
+    .toc-list2 li>a>.title {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .toc-list2 li>a .leaders::after {
+      position: absolute;
+      padding-inline-start: .25ch;
+      content: " . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . ";
+      text-align: right;
+      /* font-size: 80%; */
+    }
+
+    .toc-list2 li>a>.page {
+      /* font-size: 80%; */
+      font-weight: bold;
+      min-width: 2ch;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .toc-list3 {
+      padding: 0;
+    }
+
+    .toc-list3 ul {
+      padding-inline-start: 2ch;
+    }
+
+    .toc-list3>li>a {
+      font-size: 85%;
+      margin-block-start: -0.45em;
+    }
+
+    .toc-list3 li>a {
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: auto max-content;
+      align-items: end;
+    }
+
+    .toc-list3 li>a>.title {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .toc-list3 li>a .leaders::after {
+      position: absolute;
+      padding-inline-start: .25ch;
+      /* font-size: 80%; */
+      content: " . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . ";
+      text-align: right;
+    }
+
+    .toc-list3 li>a>.page {
+      /* font-size: medium; */
+      font-weight: bold;
+      /* font-size: 80%; */
+      min-width: 2ch;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .code-block {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 15px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight {
+      background: #f39c12;
+      color: white;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .image-container-home {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      /* margin: 20px 0; */
+      /* padding: 20px; */
+      /* background: #f8f9fa; */
+      /* border: 2px dashed #dee2e6; */
+      /* border-radius: 5px; */
+    }
+
+    .image-container-wireframe {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      /* margin: 20px 0; */
+      /* padding: 20px; */
+      /* background: #f8f9fa; */
+      /* border: 2px dashed #dee2e6; */
+      /* border-radius: 5px; */
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: #ffffff;
+      border: 2px dashed #dee2e6;
+      border-radius: 5px;
+    }
+
+    .image-container-main {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border: 2px dashed #dee2e6;
+      border-radius: 5px;
+    }
+
+    .image-container-narrow {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border: 2px dashed #dee2e6;
+      border-radius: 5px;
+    }
+
+
+    .image-container-evolution {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: #ffffff;
+      border: 2px dashed #dee2e6;
+      border-radius: 5px;
+    }
+
+    .image-placeholder {
+      color: #6c757d;
+      font-style: italic;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .image-container img {
+      max-width: 30%;
+      height: auto;
+      border-radius: 5px;
+      /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    }
+
+    .image-container-home img {
+      /* max-width: 100%; */
+      width: 60%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container-wireframe img {
+      /* max-width: 100%; */
+      width: 100%;
+      height: auto;
+    }
+
+    .image-container-narrow img {
+      /* max-width: 100%; */
+      width: 40%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container-evolution img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .image-container-main img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    .competence-box {
+      background: #e8f6f3;
+      border: 1px solid #1abc9c;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .warning {
+      background: #fdf2e9;
+      border-left: 4px solid #e67e22;
+      padding: 10px;
+      margin: 15px 0;
+    }
+
+    .info {
+      background: #eaf5ff;
+      border-left: 4px solid #3498db;
+      padding: 10px;
+      margin: 15px 0;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      font-size: 10px;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+
+    .cellgrey {
+      background: #f2f2f2;
+    }
+
+    .cellwhite {
+      background: white;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: #34495e;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .links {
+      background: #e8f4f8;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .links a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- PAGE DE TITRE -->
+    <h1>DOSSIER PROJET<br>CONCEPTEUR DÉVELOPPEUR D'APPLICATIONS</h1>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <h2 style="border: none; font-size: 24px;">Application Mobile VGL<br>(Video Games Library)</h2>
+      <p><strong>Annuaire de Jeux Vidéo avec Recommandations Personnalisées</strong></p>
+
+      <div class="image-container-home">
+        <img src="./home.png" alt="Écran d'accueil VGL">
+      </div>
+
+      <p style="margin-top: 40px;">
+        <strong>Candidat :</strong> Pierre-Alexis Fabbro<br>
+        <strong>Formation :</strong> Concepteur Développeur d'Applications<br>
+        <strong>École :</strong> 2i Academy by M2i<br>
+        <strong>Date :</strong> 09 juillet 2025
+      </p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SOMMAIRE -->
+    <h2 id="sommaire">SOMMAIRE</h2>
+    <div class="sommaire">
+      <ul class="toc-list" role="list">
+
+        <li>
+          <a href="#remerciements">
+            <span class="title">1. Remerciements<span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#remerciements" class="page"><span class="visually-hidden">Page&nbsp;</span>3</span>
+          </a>
+        </li>
+        <li>
+          <a href="#resume">
+            <span class="title">2. Introduction<span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#resume" class="page"><span class="visually-hidden">Page&nbsp;</span>4</span>
+          </a>
+        </li>
+        <li>
+          <a href="#competences">
+            <span class="title">3. Compétences du référentiel<span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#competences" class="page"><span class="visually-hidden">Page&nbsp;</span>7</span>
+          </a>
+          <ul class="toc-list2" role="list">
+
+            <li>
+              <a href="#activite1">
+                <span class="title">3.1. Activité type 1 – Développer une application sécurisée
+                  <span class="leaders" aria-hidden="true"></span></span>
+                <span data-href="#Chaining-Promises-Catching-Errors" class="page"><span
+                    class="visually-hidden">Page&nbsp;</span>8</span>
+              </a>
+              <ul class="toc-list3" role="list">
+
+                <li>
+                  <a href="#cp1">
+                    <span class="title">3.1.1. CP1 - Installer et configurer son environnement de
+                      travail en fonction du
+                      projet
+                      <span class="leaders" aria-hidden="true"></span></span>
+                    <span data-href="#cp1" class="page"><span class="visually-hidden">Page&nbsp;</span>8</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp2">
+                    <span class="title">3.1.2. CP2 - Développer des interfaces utilisateur
+
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp2" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>10</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp3">
+                    <span class="title">3.1.3. CP3 - Développer des composants métier
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp3" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>17</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#cp4">
+                    <span class="title">3.1.4. CP4 - Contribuer à la gestion du projet informatique
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp4" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>25</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#activite2">
+                <span class="title">3.2. Activité type 2 – Concevoir et développer une application
+                  sécurisée organisée en
+                  couches
+                  <span class="leaders" aria-hidden="true"></span></span> <span data-href="#activite2"
+                  class="page"><span class="visually-hidden">Page&nbsp;</span>27</span>
+              </a>
+              <ul class="toc-list3" role="list">
+
+                <li>
+                  <a href="#cp5">
+                    <span class="title">3.2.1. CP5 - Analyser les besoins et maquetter une
+                      application
+
+                      <span class="leaders" aria-hidden="true"></span></span>
+                    <span data-href="#cp5" class="page"><span class="visually-hidden">Page&nbsp;</span>27</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp6">
+                    <span class="title">3.2.2. CP6 - Définir l'architecture logicielle d'une
+                      application
+
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp6" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>29</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp7">
+                    <span class="title">3.2.3. CP7 - Concevoir et mettre en place une base de
+                      données relationnelle
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp7" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>35</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#cp8">
+                    <span class="title">3.2.4. CP8 - Développer des composants d’accès aux données
+                      SQL et NoSQL
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp8" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>38</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#activite3">
+                <span class="title">3.3. Activité type 3 – Préparer le déploiement d’une application
+                  sécurisée
+                  <span class="leaders" aria-hidden="true"></span></span> <span data-href="#activite3"
+                  class="page"><span class="visually-hidden">Page&nbsp;</span>42</span>
+              </a>
+              <ul class="toc-list3" role="list">
+
+                <li>
+                  <a href="#cp9">
+                    <span class="title">3.3.1. CP9 - Préparer et exécuter les plans de tests d’une
+                      application
+
+                      <span class="leaders" aria-hidden="true"></span></span>
+                    <span data-href="#cp9" class="page"><span class="visually-hidden">Page&nbsp;</span>42</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp10">
+                    <span class="title">3.3.2. CP10 - Préparer et documenter le déploiement d’une
+                      application
+
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp10" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>48</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#cp11">
+                    <span class="title">3.3.3. CP11 - Contribuer à la mise en production dans une
+                      démarche DevOps
+                      <span class="leaders" aria-hidden="true"></span></span> <span data-href="#cp11" class="page"><span
+                        class="visually-hidden">Page&nbsp;</span>49</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#cahier-charges">
+            <span class="title">4. Cahier des charges
+              <span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#cahier-charges" class="page"><span class="visually-hidden">Page&nbsp;</span>50</span>
+          </a>
+        </li>
+        <li>
+          <a href="#realisations">
+            <span class="title">5. Réalisations
+              <span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#realisations" class="page"><span class="visually-hidden">Page&nbsp;</span>52</span>
+          </a>
+        </li>
+        <li>
+          <a href="#conclusion">
+            <span class="title">6. Conclusion
+              <span class="leaders" aria-hidden="true"></span></span>
+            <span data-href="#conclusion" class="page"><span class="visually-hidden">Page&nbsp;</span>56</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="page-break"></div>
+
+    <!-- REMERCIEMENTS -->
+    <h2 id="remerciements">REMERCIEMENTS</h2>
+    <p>Je tiens à remercier toute l'équipe pédagogique et administrative de M2I, pour leur accompagnement tout au long
+      de cette formation CDA, spécialement Thomas et Angélique qui m'auront grandement simplifié mon cursus, compte tenu
+      de mon éloignement géographique du lieu de formation.</p>
+    <p>Je remercie aussi les formateurs qui m'ont guidé tout au long de ces années, ainsi que dans la réalisation de ce
+      projet de fin de formation. Des remerciements tout particuliers au formateur que l'on aura le plus côtoyé, Adam,
+      avec sa pédagogie incroyable qui s'adapte au rythme de chacun, et bien sûr, son bagage technique plus
+      qu'impressionnant.</p>
+    <p>Mes remerciements vont également à mes collègues de promotion pour les échanges techniques enrichissants et
+      l'entraide tout au long du cursus.</p>
+    <p>Je veux aussi particulièrement remercier mon chef, Frédéric, même si je ne pourrai jamais assez le faire pour la
+      chance qu'il m'a accordé. Il m'a tout offert pour que je puisse suivre
+      cette formation, du contrat de professionalisation, jusqu'au matériel et à la structure nécessaire pour pouvoir
+      réaliser ce projet.</p>
+    <p>Merci également, à mes collègues de Tec6, qui auront été, plus d'une fois de précieuses aides, en prenant sur
+      leur temps et leur énergie, pour
+      instruire le débutant inexpérimenté que j'étais. Tout spécialement Gaëtan, avec qui j'aurais eu les discussions
+      les
+      plus nombreuses, chaleureuses et enrichissantes.</p>
+    <p>Et cela devrait aller sans dire, mais ils s'adressent bien entendu à ma formidable chérie, qui m'aura soutenu,
+      bien avant cela, tout du long, et j'espère encore longtemps après.</p>
+
+    <div class="page-break"></div>
+
+    <!-- RÉSUMÉ -->
+    <h2 id="resume">Introduction</h2>
+
+    <div class="info">
+      <p><strong>Projet :</strong> Application mobile VGL (Video Games Library)</p>
+      <p><strong>Contexte :</strong> Projet de fin de formation CDA à l'école M2I</p>
+      <p><strong>Durée :</strong> 22 mois</p>
+      <p><strong>Technologies :</strong> React Native/Expo, Node.js/Express, MongoDB, Render</p>
+      <p><strong>Objectif :</strong> Développer une application mobile multi-couche servant d'annuaire de jeux vidéo
+        connecté à une API REST, avec système d'authentification et de recommandations personnalisées (vision
+        d'évolution vers une
+        plateforme e-sport) qui prend en compte le respect des RGPD, l'accessibilité et l'éco-conception.</p>
+    </div>
+
+    <h3>Problématiques</h3>
+    <ul>
+      <li>Comment créer une application mobile performante et évolutive permettant aux utilisateurs de découvrir,
+        organiser et avoir des recommandations de jeux vidéo ?</li>
+      <li>Comment automatiser la récupération de données obtenues sur le web via webscraping (dans le cadre légal d'un
+        projet scolaire, non commercial) ?</li>
+      <li>Comment gérer les problèmes liés à la variation de certaines données en temps réel (nombre de likes d'un jeu
+        qui évoluent constamment et casseraient une pagination en modifiant un ensemble ordonné selon les likes) ?</li>
+    </ul>
+    <div class="page-break"></div>
+    <h3>Évolution architecturale du projet</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Interfaces</th>
+            <th>Base de données</th>
+            <th>Données</th>
+            <th>Implémentations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Version 1</td>
+            <td>React Native</td>
+            <td>MariaDB (SQL) serveur MySQL en local</td>
+            <td>300 000+ jeux via API Steam</td>
+            <td>Créations des principaux composants</td>
+          </tr>
+          <tr>
+            <td>Version 2</td>
+            <td>React Native</td>
+            <td>Hybride en local: MariaDB (Users) MySQL + MongoDB (Games) Compass</td>
+            <td>Games: Ajout de descriptions multilingues + tags anglais par scraping</td>
+            <td>Structure de données contrôlée avec le driver node MongoDB, plus Cloudinary pour les images, ajout du
+              scraping dynamique</td>
+          </tr>
+          <tr>
+            <td>Version 3</td>
+            <td>React Native</td>
+            <td>MongoDB (NoSQL unifié) Compass en local</td>
+            <td>Users: Ajout des préférences utilisateurs et données pour l'algorithme de recommendations</td>
+            <td>Driver MongoDB remplacé par Mongoose pour validation, ajout du systèmes de favoris et de recommendations
+            </td>
+          </tr>
+          <tr>
+            <td>Version 4 (finale)</td>
+            <td>React Native</td>
+            <td>MongoDB (NoSQL unifié) Atlas sur cloud</td>
+            <td>Dataset réduit pour contraintes de déploiement (512Mo Atlas)</td>
+            <td>Ajout des tests et déploiement de l'API sur les serveurs de Render</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <div class="image-container-evolution">
+      <img src="./V1.png" alt="V1 VGL">
+      <img src="./V2.png" alt="V2 VGL">
+      <img src="./V3.png" alt="V3 VGL">
+      <img src="./V4.png" alt="V4 VGL">
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- COMPÉTENCES DU RÉFÉRENTIEL -->
+    <h2 id="competences">COMPÉTENCES DU RÉFÉRENTIEL</h2>
+
+    <div class="competence-box">
+      <h3>Activité type 1 - Développer une application sécurisée</h3>
+      <ul>
+        <li><strong>CP1 -</strong> Installer et configurer son environnement de travail en
+          fonction du projet</li>
+        <li><strong>CP2 -</strong> Développer des interfaces utilisateur</li>
+        <li><strong>CP3 -</strong> Développer des composants métier</li>
+        <li><strong>CP4 -</strong> Contribuer à la gestion du projet informatique</li>
+      </ul>
+    </div>
+
+    <div class="competence-box">
+      <h3>Activité type 2 - Concevoir et développer une application sécurisée organisée en couches</h3>
+      <ul>
+        <li><strong>CP5 -</strong> Analyser les besoins et maquetter une application</li>
+        <li><strong>CP6 -</strong> Définir l'architecture logicielle d'une application</li>
+        <li><strong>CP7 -</strong> Concevoir et mettre en place une base de données relationnelle</li>
+        <li><strong>CP8 -</strong> Développer des composants d'accès aux données SQL et NoSQL</li>
+      </ul>
+    </div>
+    <div class="competence-box">
+      <h3>Activité type 3 - Préparer le déploiement d’une application sécurisée</h3>
+      <ul>
+        <li><strong>CP9 -</strong> Préparer et exécuter les plans de tests d’une
+          application</li>
+        <li><strong>CP10 -</strong> Préparer et documenter le déploiement d’une
+          application</li>
+        <li><strong>CP11 -</strong> Contribuer à la mise en production dans une démarche
+          DevOps</li>
+      </ul>
+    </div>
+    <div class="page-break"></div>
+
+    <!-- ACTIVITÉ TYPE 1 -->
+    <h2 id="activite1">ACTIVITÉ TYPE 1 – DÉVELOPPER UNE APPLICATION SÉCURISÉE</h2>
+
+    <!-- CP 1 -->
+    <h3 id="cp1">CP1 - Installer et configurer son environnement de travail en
+      fonction du projet</h3>
+
+    <h4>Environnement de développement global :</h4>
+    <ul>
+      <li>PC Lenovo 82TT</li>
+      <li>Windows 11 edition famille</li>
+      <li>Node.js en version 22.14.0, installé via NVM 1.1.12</li>
+      <li>Gestion de projet sur Trello</li>
+    </ul>
+
+    <h4>Environnement de développement du frontend :</h4>
+
+    <ul>
+      <li>React Native en version 0.79.2</li>
+      <li>Expo en version 53.0.9</li>
+      <li>Samsung Galaxy A13</li>
+      <li>La dépendance web d'Expo</li>
+      <li>Android Studio</li>
+      <li>Un fichier variables.js</li>
+      <li>Github</li>
+    </ul>
+
+    <p>L'application a pour public cible les utilisateurs mobiles, Android dans un premier temps, mais avec possibilité
+      d'évolution sur le marché IOS dans un second temps, puis à plus long terme, sur le web, c'est pourquoi j'ai choisi
+      React Native comme technologie principale pour mon application. Le point fort de React Native est la portabilité
+      d'une plateforme mobile à l'autre, en revanche, il souffre d'une moins grande portabilité vers le web, pleinement
+      contrebalancé par la facilité de migration d'un projet React Native vers un projet React.js qui, lui, sera
+      parfaitement adapté à une évolution future sur du web.</p>
+
+    <p>Le développement sur Expo permet d'utiliser son mobile en tant qu'environnement de développement, ce qui
+      facilite et accélère énormément la boucle "modification du code"/"observation des modifications", et permet d'être
+      au plus proche des conditions d'utilisation prévues de l'application, ce qui est le point faible du développement
+      mobile sur émulateur, qui est obligé de simuler logiciellement toutes les interactions utilisateur matérielles,
+      que l'on ne peut faire que sur mobile.</p>
+
+    <p>Le développement sur émulateurs, via Android Studio, a quand même été retenu comme solution viable, pour tester
+      la responsivité de
+      l'application à différentes tailles d'écran, ce que ne permet pas l'utilisation de son propre mobile.</p>
+
+    <p>Personnellement, le seul autre point faible que j'ai trouvé à l'utilisation d'Expo pour développer efficacement,
+      est son opacité sur ce qui se passe en partie "réseau", c'est pourquoi j'ai pris l'habitude de l'utiliser avec sa
+      dépendance web, qui facilite énormément le débug en observant ce qui se passe sur la partie "network" du
+      navigateur qui exécutera notre application.</p>
+
+    <p>Dans la première version de l'application, je travaillais avec des collaborateurs, nous nous communiquions nos
+      ajouts dans le
+      code grâce à un dossier commun sur Github, et nous avions ajouté un fichier variables.js au .gitignore pour
+      stocker tout ce qui était propre à nos environnements respectifs, sans que cela soit partagé sur la partie
+      commune.</p>
+
+    <h4>Environnement de développement du backend :</h4>
+
+    <ul>
+      <li>Express.js en version 4.21.2</li>
+      <li>Dotenv en version 16.4.7</li>
+      <li>Mailtrap</li>
+      <li>Postman</li>
+      <li>HeidiSQL</li>
+      <li>DBeaver</li>
+      <li>MongoDB Compass</li>
+      <li>Github</li>
+    </ul>
+
+    <p>J'utilise un serveur Express.js avec la dépendance nodemon, ce qui, une nouvelle fois,
+      facilite et accélère énormément la boucle "modification du code"/"observation des modifications".</p>
+    <p>La dépendance dotenv est utilisée pour utiliser des variables d'environnement, notamment NODE_ENV qui
+      permet de facilement lancer mon serveur en mode production ou en mode développement.</p>
+    <p>L'outil en ligne Mailtrap est utilisé pour simuler l'envoi d'e-mails, sans réellement en envoyer, par souci
+      d'écologie.</p>
+    <p>Les différentes routes de l'API sont testées grâce au logiciel Postman.</p>
+    <p>La dépendance dotenv est utilisée pour utiliser des variables d'environnement, notamment NODE_ENV qui
+      permet de facilement lancer mon serveur en mode production ou en mode développement.</p>
+    <p>Les bases de données sont administrées et visualisées plus simplement, grâce aux logiciels HeidiSQL et DBeaver
+      pour le relationnel, et MongoDB Compass pour le non-relationnel.</p>
+
+    <h4>Environnement de développement du scraper :</h4>
+
+    <p>Application minimaliste Node.js avec le dossier des dépendances utilisées, un fichier conf.env contenant les
+      informations de connexions aux différentes base de données, et un seul ficher scraper.js contenant les
+      déclarations des fonctions utiles, et un appel à la fonction nécessitée. </p>
+
+    <h3 id="cp2">CP2 - Développer des interfaces utilisateur</h3>
+
+
+    <h4>Écrans :</h4>
+    <ul>
+      <li>Écran d'accueil recherche/recommandations avec infinite scroll et filtres</li>
+      <li>Écran de détails des jeux</li>
+      <li>Écran de profil utilisateur</li>
+      <li>Écran de préférences utilisateur</li>
+      <li>Écran caméra et galerie</li>
+      <li>Écran de modification du mot de passe</li>
+      <li>Écran de gestion des favoris</li>
+      <li>Écran de connexion (login)</li>
+      <li>Écran d'inscription (signup)</li>
+      <li>Écran d'envoi de mail de réinitialisation de mot de passe</li>
+      <li>Écran de vérification du code reçu par mail</li>
+    </ul>
+    <h4>Écrans principaux :</h4>
+    <h5>Écran d'accueil :</h5>
+    <p>L'écran d'accueil est chargé d'appeler une première page de 36 résultats, et d'en charger 36 supplémentaires à
+      chaque fois que l'utilisateur parvient en bas du scroll, à condition bien sûr qu'il n'ait pas encore chargé la
+      totalité des requêtes correspondantes à ses filtres. Si l'écran d'accueil n'a pas de paramètre de navigation
+      "foryou : true", alors il charge les requêtes
+      correspondantes à son mot-clé de recherche, et à son filtre "NSFW" (par défaut "false", à moins qu'un utilisateur
+      connecté le mette en "true"). Si l'écran d'accueil a un paramètre de navigation "foryou : true", alors il charge
+      les requêtes
+      correspondantes aux jeux les plus mis en favoris par l'utilisateur.</p>
+    <div class="image-container-narrow">
+      <img src="./front/search.jpg" alt="search VGL">
+      <img src="./front/recommended.jpg" alt="recommandation VGL">
+    </div>
+    <h5>Écran de détails :</h5>
+    <p>L'écran des détails présentera davantage de précisions que les cartes de l'infinite-scroll.
+    </p>
+    <p>-Il charge dans un
+      premier temps, les tags en anglais présents dans notre base de données, puis il ira scraper les tags et les
+      reviews correspondants à la langue, anglaise si aucun utilisateur de connecté, ou que l'utilisateur a renseigné
+      dans
+      ses préférences si son compte est connecté.</p>
+    <p>-Dans la première requête, une description détaillée et des médias sont aussi chargés. Les médias sont les vidéos
+      ou les images du jeux, et sont navigables via le lecteur de média en caroussel.</p>
+    <p>-Si un utilisateur est connecté, il a la possibilité d'ajouter ou retirer le jeux dans ses favoris.</p>
+    <div class="image-container-narrow">
+      <img src="./front/details.jpg" alt="details VGL">
+    </div>
+    <h4>Composants principaux :</h4>
+    <ul>
+      <li>Header</li>
+      <li>Carte d'un jeu</li>
+      <li>Lecteur Vidéo/Images Caroussel</li>
+      <li>Avatar personnalisé</li>
+      <li>Boutons du profil</li>
+    </ul>
+    <h5>Header :</h5>
+    <p>Le header est le composant le plus réutilisé, il est présent sur la plupart des pages, permet de revenir en
+      arrière dans la navigation, d'ouvrir le menu de navigation (ne sera réellement utile que pour les évolutions
+      futures), d'accéder à son profil si connecté, ou à l'écran de connexion sinon. Il permet aussi de rechercher un
+      jeu dans la base de données, la valeur de la recherche est stockée dans les données de l'application, grâce à
+      redux, pour une UX plus agréable à travers
+      les navigations.</p>
+    <div class="image-container-main">
+      <img src="./front/header.jpg" alt="header VGL">
+    </div>
+    <h5>Carte d'un jeu :</h5>
+    <p>La carte d'un jeu, permet d'accéder à la page de détail du jeu sur lequel on clique, elle possède également une
+      version extensible en hauteur pour afficher davantage de détails sans naviguer ailleurs.</p>
+    <div class="image-container-narrow">
+      <img src="./front/unexpanded.jpg" alt="unexcard VGL">
+      <img src="./front/expanded card.jpg" alt="excard VGL">
+    </div>
+    <h5>Avatar personnalisé et boutons du profil :</h5>
+    <p>-L'avatar personnalisé est utilisé en grande échelle sur l'écran du profil, et en petite icône sur le header, sa
+      logique est la même pour les deux : si l'utilisateur a renseigné une photo d'avatar, alors elle est utilisée,
+      sinon un avatar personnalisé est créé avec les deux premières lettres de l'username de l'utilisateur.</p>
+    <p>-Les boutons du profil sont unifiés dans leurs UI, on viendra simplement leur confier des logiques, textes et
+      icônes différentes.</p>
+    <div class="image-container-narrow">
+      <img src="./front/profilenonco.jpg" alt="profil non co VGL">
+      <img src="./front/profile.jpg" alt="profil VGL">
+    </div>
+    <h4>Gestion de la responsivité</h4>
+    <h5>Responsivité UX</h5>
+    <p>Au niveau de l'UX, l'utilisateur reçoit des informations sur les processus sous-jacents grâce à plusieurs moyens :
+    </p>
+    <ul>
+      <li><strong>Dépendance Toast</strong> : Des hooks personnalisés sont mis en place pour lancer des popups
+        temporaires (toasts) informant de la réussite ou de l'échec d'une action.
+      </li>
+      <li><strong>Indicateurs d'activités</strong> : Des loaders personnalisés sont implémentés.</li>
+      <li><strong>Props "loading" de la dépendance UI react-native-paper</strong> : Les composants "activables" peuvent
+        être rendus inactifs en même temps que montrer qu'ils sont en train de traiter une action.</li>
+    </ul>
+    <div class="page-break"></div>
+    <h5>Responsivité UI</h5>
+    Au niveau de l'UI, l'application gère les différentes tailles d'écrans grâce à 3 moyens :
+    <ul>
+      <li><strong>Flexbox CSS</strong> : Utilisation des propriétés flex pour l'adaptation dynamique
+      </li>
+      <li><strong>Dimensions relatives</strong> : Propriétés de taille relative (ex: height="25%")</li>
+      <li><strong>Dimensions React Native</strong> : Import et utilisation de l'API Dimensions pour les
+        calculs adaptatifs</li>
+    </ul>
+    <p>Les cas les plus simples sont gérés via les deux premières solutions, mais le gros de la responsivité est géré
+      grâce à la troisième.</p>
+    <p>En demandant à une IA de faire l'agrégation des ratios hauteur/largeur des écrans de tablette Android pour
+      trouver le
+      minimum (entendre "la tablette la plus proche d'un carré"), on s'approche d'un ratio 4/3, donc comme notre
+      application est verrouillée en mode portrait, et que les écrans sont dans des ScrollViews pour gérer les
+      débordements verticaux (worst case scenario ratio hauteur/largeur trop élévé, géré), si on affiche correctement
+      nos
+      composants proportionnellement à la largeur d'écran, sur un format 4/3, on aura un affichage correct de partout
+      (worst case scenario ratio hauteur/largeur trop bas, géré) CQFD.</p>
+    <p>Le composant ayant le ratio le plus "étiré en hauteur" est la carte d'un jeu de l'infinite-scroll lorsqu'on a
+      cliqué sur "voir plus", on l'affiche correctement sur du 4/3, l'utilisateur voit les détails qu'il est censé voir
+      sans avoir besoin de scroller verticalement, donc il n'y aura aucun problème de responsivité nulle part si on
+      affiche tous nos composants de la même manière : proportionnellement à la largeur de l'écran.</p>
+    <div class="image-container-main">
+      <img src="./front/responsivecode.png" alt="reponsivecode VGL">
+    </div>
+    <div class="page-break"></div>
+    <p>Voici quelques écrans de mon application sur tablette :</p>
+    <div class="image-container">
+      <img src="./front/TabletDetails.png" alt="tablet1 VGL">
+      <img src="./front/TabletHome.png" alt="tablet2 VGL">
+      <img src="./front/TabletProfile.png" alt="tablet3 VGL">
+    </div>
+    <h3 id="cp3">CP3 - Développer des composants métier</h3>
+
+    <h4>Fonctionnement global du backend</h4>
+    <p>Dans le cadre de l'architecture MVC (détaillée en CP6), j'ai créé une fonction "wrapper" asyncError() qui gère
+      les erreurs de manière asynchrone, et qui permet de se passer de blocs try-catch dans les déclarations des
+      fonctions qu'on lui passe en paramètre, ainsi que d'effectuer la gestion de toutes les erreurs dans la même
+      fonction, mon middleware d'erreur. </p>
+    <p>J'ai donc mis tous mes contrôleurs à l'intérieur de ma fonction "wrapper".</p>
+    <div class="page-break"></div>
+    <h5>Contrôleurs User :</h5>
+    <div class="image-container-main">
+      <img src="./back/User Controller.png" alt="Contrôleurs User VGL">
+    </div>
+
+    <h5>Contrôleurs Game :</h5>
+    <div class="image-container-main">
+      <img src="./back/Game controller.png" alt="Contrôleurs Game VGL">
+    </div>
+    <h5>Sécurisations des routes :</h5>
+    <p>Chaque route est déclarée avec son endpoint et son contrôleur appelé, et les middlewares d'authentification
+      nécessaires pour y accéder.
+      En exemple je mets le cas le plus complexe de ma seule route nécessitant le rôle d'admin, celle pour ajouter un
+      nouveau jeu au catalogue :
+    </p>
+    <div class="image-container-main">
+      <img src="./back/routeprotected.png" alt="Admin route VGL">
+    </div>
+    <p>isAuthenticated vérifie la présence d'un cookie appelé "token" puis le décrypte en tant que JSON Web Token en
+      utilisant le même secret qu'à l'encodage, secret stocké dans un fichier config.env et
+      accessible grâce à la dépendance dotenv. Si une erreur se produit (pas de token, token invalide, ou token
+      renvoyant
+      à un utilisateur inexistant) le middleware d'erreur est immédiatement appelé, sautant ainsi les étapes
+      intermédaires, notamment l'appel du contrôleur.
+      Si aucune erreur ne s'est produite, on renseigne l'utilisateur à qui appartient le token dans la requête, avant de
+      la passer ici, au middleware d'authentification suivant, sinon au contrôleur.
+    </p>
+    <p>Ici isAdmin vérifie simplement que l'utilisateur qui a validé son token via isAuthenticated, possède bien le rôle
+      d'admin, et soulève une erreur pour ne pas appeler le contrôleur si ce n'est pas le cas.
+    </p>
+    <div class="image-container-main">
+      <img src="./back/AuthMiddleware.png" alt="Auth middlewares VGL">
+    </div>
+    <div class="page-break"></div>
+    <h4>Composants de connexions</h4>
+
+    <h5>Composant de création de compte :</h5>
+    <p>On récupère les informations nécessaires à la création d'un nouvel utilisateur, on s'assure que son e-mail ne
+      soit
+      pas déjà dans notre base de données, et si tout est valide, on crée l'utilisateur, et on renvoie un token en
+      réponse.</p>
+    <div class="image-container-main">
+      <img src="./back/signupcontroller.png" alt="Signup controleur">
+    </div>
+
+    <h5>Composant de connexion :</h5>
+    <p>On trouve l'utilisateur correspondant à l'e-mail fourni en corps de requête, s'il est bien trouvé, on compare le
+      mot de passe fourni, avec celui en base de données, si tout est valide, on renvoie un token en réponse.</p>
+    <div class="image-container-main">
+      <img src="./back/logincontroller.png" alt="Login controleur">
+    </div>
+    <h5>Composant d'envoi de token :</h5>
+    <p>On génère un token correspondant à l'utilisateur passé en paramètre, et aux règlages du mode dans lequel le
+      serveur a été lancé, développement ou production, puis on le renvoie à l'utilisateur dans un cookie.</p>
+    <div class="image-container-main">
+      <img src="./back/sendtoken.png" alt="SendToken">
+    </div>
+    <h5>Méthodes du modèle User :</h5>
+    <p>La méthode save est appelée à chaque fois qu'on enregistre une modification sur un utilisateur, que ce soit lors
+      d'une création ou d'une mise à jour. On définit donc une méthode qui sera appelée avant chaque appel de "save", et
+      on s'assure que si l'utilisateur ne souhaite pas modifier son mot de passe, on ne le réencrypte pas une nouvelle
+      fois. Toutefois, si le mot de passe est modifié, ou initialisé, on le stocke encrypté en base de données, grâce à
+      la dépendance bcrypt.</p>
+    <p>On définit une fonction qui sera appelée sur un utilisateur, et qui compare son mot de passe à celui passé en
+      paramètre, toujours avec la dépendance bcrypt.</p>
+    <p>La méthode pour générer un token à l'utilisateur encodera dans le JWT le minimum d'informations pour le
+      retrouver, à savoir son identifiant MongoDB. On le signe bien avec le secret présent dans config.env, et avec une
+      durée d'expiration arbitraire de 15 jours, puis on le retourne.</p>
+    <div class="image-container-main">
+      <img src="./back/usermethod.png" alt="methods user">
+    </div>
+    <h4>Composant de recherche</h4>
+    <p>L'utilisateur cherche dans la liste de jeux selon un mot-clé qui sera contenu dans le titre, et filtre les jeux
+      NSFW en fonction de ce qu'il a renseigné dans ses préférences utilisateur.</p>
+    <p>Il parcourra la liste de jeux obtenus, grâce à un scroll sans fin (infinite-scroll), qui chargera les résultats
+      de la liste 36 par 36 (divisibilité exceptionnelle, pour une future évolution en affichage grid, responsive selon
+      le niveau de zoom, pour navigateurs web).</p>
+    <p>On renvoie également la taille totale de la recherche, pour que le frontend puisse savoir qu'il a atteint la fin
+      de la liste, et ne demande pas à charger davantage de résultats.</p>
+    <div class="image-container-main">
+      <img src="./back/searchgame.png" alt="Algorithme de recherche VGL">
+    </div>
+
+    <h4>Composant de recommandation</h4>
+    <p>Complexité logicielle : O(1) si la liste de favoris n'a pas été modifiée, sinon calcul des
+      5 tags les plus présents en O(n*log(n)).</p>
+    <div class="warning">
+      <p>Je souhaite avoir une fonction prédictive, donc pour que les résultats ne dépendent pas d'une forme de hasard,
+        l'algorithme calcule les 5 tags les plus présents, et retourne ces 5 tags, concaténés à tous ceux qui ont
+        exactement la même fréquence d'apparition que le 5ème tag.</p>
+    </div>
+    <p>La complexité en O(n*log(n)) provient de l'utilisation d'un algorithme de tri, que l'on sait ne pas pouvoir être
+      plus efficient que cela. En effet, les algorithmes de tri mis à disposition nativement par les langages
+      informatiques, quels qu'il soient, utiliseront tous une approche de type "divide and conquer" pour pouvoir baisser
+      la complexité de O(n²) (quadratique) à O(n*log(n)) (quasi-linéaire), car si c'était plus complexe que cela, le
+      langage serait frauduleux, et si c'était moins complexe, l'exploit que cela constituerait en terme d'algorithmie,
+      tournerait une page dans l'histoire de l'informatique telle qu'on la connaît!</p>
+    <p>La méthode de tri différe alors de la simple recherche, cette fois on se contentera de retourner les jeux qui ont
+      au moins un tag en commun avec nos tops tags, en revanche la méthode de parcours de l'utilisateur reste la même,
+      infinite-scroll par pagination, on retournera donc aussi la taille de la liste triée.</p>
+
+    <div class="image-container-main">
+      <img src="./back/game recommendation.png" alt="Algorithme de recommandation VGL">
+    </div>
+
+    <h4>Composant de webscraping légal</h4>
+    <div class="warning">
+      <strong>Note légale :</strong> Le webscraping est utilisé uniquement dans le cadre d'un projet scolaire, à des
+      fins éducatives et non commerciales.
+    </div>
+    <p>La dépendance Cheerio est utilisée, pour transformer le texte HTML de la page, en éléments jQuery, donc
+      accessibles via les sélecteurs classiques. En lisant le contenu d'une page de détails d'un jeu sur steam, on
+      repère les combinaisons de sélecteurs nous permettant d'accéder aux balises qui nous intéressent, et uniquement
+      elles, et on s'en sert ensuite pour extraire les renseignements qu'elles contiennent, que l'on retournera à
+      l'utilisateur, formatés selon nos désirs.</p>
+    <div class="image-container-main">
+      <img src="./back/scraper code.png" alt="Webscraping Steam">
+    </div>
+
+    <h3 id="cp4">CP4 - Contribuer à la gestion du projet informatique</h3>
+
+    <h4>Organisation avec Trello</h4>
+    <p>Nous avons utilisé Trello pour organiser notre travail en suivant une méthodologie agile.</p>
+    <ul>
+      <li><strong>Features/tâches :</strong> Fonctionnalités à développer</li>
+      <li><strong>To Do this sprint :</strong> Fonctionnalités prioritaires</li>
+      <li><strong>Noms des collaborateurs :</strong> Fonctionnalités attribuées à un développeur</li>
+      <li><strong>Block :</strong> Fonctionnalités jugées trop complexes</li>
+      <li><strong>En cours de review :</strong> Fonctionnalités en phase de test</li>
+      <li><strong>Terminé :</strong> Fonctionnalités validées et déployées</li>
+    </ul>
+
+    <div class="image-container-main">
+      <img src="./back/Trello.png" alt="Organisation Trello VGL">
+    </div>
+
+    <h4>Versioning avec Git</h4>
+    <p>Je n'ai mis que les repositories finaux en public, mais nous avions travaillé sur deux premières versions en
+      monorepositories backend et frontend au même endroit, puis séparé en versions isolées, version finale pour le
+      frontend, pénultième puis finale pour le backend.</p>
+    <p>Au cours des années, du départ des collaborateurs, et des projets que nous avions en entreprise, nous pouvions
+      passer plusieurs mois sans toucher au projet, dans ces cas là je préférais me réimprégner du fonctionnement
+      global en reprenant le projet de zéro, en utilisant les précédents dossiers comme templates, et environnements
+      de débug. Si je préfère procéder ainsi, c'est aussi pour toujours limiter le nombre de dépendances du projet au
+      minimum.</p>
+    <div class="links">
+
+      <p><strong>Repositories du projet :</strong></p>
+      <ul>
+        <li><strong>Backend :</strong> <a href="https://github.com/Kyelink/VGLServer"
+            target="_blank">https://github.com/Kyelink/VGLServer</a></li>
+        <li><strong>Frontend :</strong> <a href="https://github.com/Kyelink/FrontendVGL"
+            target="_blank">https://github.com/Kyelink/FrontendVGL</a></li>
+      </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ACTIVITÉ TYPE 2 -->
+    <h2 id="activite2">ACTIVITÉ TYPE 2 – CONCEVOIR ET DÉVELOPPER UNE APPLICATION SÉCURISÉE ORGANISÉE EN COUCHES</h2>
+
+    <h3 id="cp5">CP5 - Analyser les besoins et maquetter une application</h3>
+    <h4>Analyse des besoins MVP</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Besoin fonctionnel</th>
+            <th>Description</th>
+            <th>Priorité</th>
+            <th>Complexité</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Consultation de catalogue</td>
+            <td>Parcourir les jeux avec infinite scroll</td>
+            <td>Haute</td>
+            <td>Moyenne</td>
+            <td>✅ Réalisé</td>
+          </tr>
+          <tr>
+            <td>Recherche et filtrage</td>
+            <td>Rechercher par nom, filtrer par critères</td>
+            <td>Haute</td>
+            <td>Facile</td>
+            <td>✅ Réalisé</td>
+          </tr>
+          <tr>
+            <td>Gestion des favoris</td>
+            <td>Ajouter/retirer des jeux favoris</td>
+            <td>Haute</td>
+            <td>Facile</td>
+            <td>✅ Réalisé</td>
+          </tr>
+          <tr>
+            <td>Recommandations</td>
+            <td>Suggestions basées sur les favoris</td>
+            <td>Moyenne</td>
+            <td>Moyenne</td>
+            <td>✅ Réalisé</td>
+          </tr>
+          <tr>
+            <td>Gestion utilisateur</td>
+            <td>Inscription, connexion, oubli de MDP, profil</td>
+            <td>Haute</td>
+            <td>Facile</td>
+            <td>✅ Réalisé</td>
+          </tr>
+          <tr>
+            <td>Données temps réel</td>
+            <td>Scraping des informations Steam</td>
+            <td>Moyenne</td>
+            <td>Facile</td>
+            <td>✅ Réalisé</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>Analyse des besoins futurs</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Besoin fonctionnel</th>
+            <th>Description</th>
+            <th>Priorité</th>
+            <th>Complexité</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tri</td>
+            <td>Recommander les jeux les plus mis en favoris</td>
+            <td>Faible</td>
+            <td>Facile</td>
+            <td>❌ Anticipé</td>
+          </tr>
+          <tr>
+            <td>Forum</td>
+            <td>Espace commentaires sur les pages des jeux</td>
+            <td>Faible</td>
+            <td>Moyenne</td>
+            <td>❌ Anticipé</td>
+          </tr>
+          <tr>
+            <td>Actualités E-sport</td>
+            <td>Systéme d'alertes personnalisées</td>
+            <td>Faible</td>
+            <td>Extrême</td>
+            <td>❌ Non réaisé</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-break"></div>
+    <h4>Wireframe VGL</h4>
+    <p>J'ai utilisé canva pour concevoir le wireframe de mon application, je vous en montre un aperçu en image, et la
+      version complète accessible sur canva.com.</p>
+    <p><strong>Aperçu : </strong>
+    <div class="image-container-wireframe">
+      <img src="./front/maquette.png" alt="Maquettes VGL">
+    </div>
+    <div class="links">
+      <p><strong>Wireframe VGL complet :</strong>
+        <a href="https://www.canva.com/design/DAGrl5GuUjw/GgREUUaWrodxN5WdVmcfow/view?utm_content=DAGrl5GuUjw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h14c82afe91"
+          target="_blank">
+          https://www.canva.com/design/DAGrl5GuUjw/GgREUUaWrodxN5WdVmcfow
+        </a>
+      </p>
+    </div>
+
+
+
+
+    <h3 id="cp6">CP6 - Définir l'architecture logicielle d'une application</h3>
+
+    <h4>Architecture multi-couches</h4>
+    <div class="info">
+      <p><strong>Frontend :</strong> React Native + Expo</p>
+      <p><strong>Backend :</strong> Node.js + Express + Architecture MVC avec Mongoose</p>
+      <p><strong>Base de données :</strong> MongoDB Atlas</p>
+      <p><strong>Services externes :</strong> Steam Scraping + Cloudinary</p>
+      <p><strong>Déploiement :</strong> Render (Backend)</p>
+    </div>
+
+    <div class="image-container-evolution">
+      <img src="./DetailledV4.png" alt="Architecture détaillée">
+    </div>
+
+    <h4>Architecture frontend</h4>
+    <div class="info">
+      <p><strong>Technologie principale :</strong> React Native avec Expo</p>
+      <p><strong>Architecture :</strong> "MVVM avec Redux" ou "Redux Architecture Pattern"</p>
+      <p><strong>Persistence des données globales d'application :</strong> Redux toolkit</p>
+      <p><strong>Persistence des données utilisateur :</strong> Cookies</p>
+      <p><strong>Communication avec le backend :</strong> Axios</p>
+      <p><strong>Navigation :</strong> React navigation</p>
+      <p><strong>Librairie UI :</strong> React native paper</p>
+      <p><strong>Gestionnaire fichiers :</strong> Dépendances : Expo camera, Expo image picker, et Mime</p>
+      <p><strong>Tests :</strong> Jest</p>
+    </div>
+    <p>
+      Point d'entrée de l'application : index.js, simplement chargé d'appeler App.js en tant que racine de l'application
+      Expo.
+    </p>
+    <p>
+      App.js est simplement chargé de wrapper Main.jsx autour du provider et store redux.
+    </p>
+    <p>
+      Main.jsx a alors deux responsabilités : Charger l'utilisateur connecté dans redux grâce au token présent dans un
+      cookie, puis wrapper les différents écrans de notre application dans un StackNavigator.
+    </p>
+    <p>
+      On stocke alors les différents écrans dans un dossier "screens", et les composants réutilisables qu'ils emploient
+      dans un dossier "components".
+    </p>
+    <p>
+      La logique purement frontend est confiée aux écrans et aux composants, tandis que la logique backend, est confiée
+      aux actions redux.
+    </p>
+    <p>Les styles réutilisables sont confiés à un fichier global styles.js</p>
+    <p>La responsivité UX est confiée à des hooks réutilisables, appelés en début d'écran, qui informent l'utilisateur
+      des résultats des actions redux, grâce à la dépendance Toast.</p>
+    <div class="page-break"></div>
+    <h4>Architecture backend</h4>
+    <div class="info">
+      <p><strong>Technologie principale :</strong> Express.js et Mongoose</p>
+      <p><strong>Architecture :</strong> MVC "enrichi" ou "étendu" (utilisation de middlewares avec MVC)</p>
+      <p><strong>Validation des données :</strong> Mongoose</p>
+      <p><strong>Sécurité authentification :</strong> Middlewares</p>
+      <p><strong>Gestion des erreurs :</strong> Middleware, wrapper de fonctions, et héritage de la classe Error</p>
+      <p><strong>Variables d'environnement sensibles :</strong> Dotenv et fichier config.env</p>
+      <p><strong>Stockage de données sensibles :</strong> Mots de passes hashés grâce à Bcrypt</p>
+      <p><strong>Envoi de mails :</strong> Nodemailer</p>
+      <p><strong>Gestionnaire fichiers :</strong> Middleware et dépendances : Multer, DataUri, et Cloudinary</p>
+      <p><strong>Tests :</strong> Jest</p>
+    </div>
+    <p>
+      Une bonne partie de la sécurité de l'application a déjà été expliquée dans le CP3, mon dossier projet, tout comme
+      mon projet suit au maximum le principe DRY (Don't Repeat Yourself), je me contenterai donc d'expliquer ce qui ne
+      l'a pas déjà été.
+    </p>
+    <p>
+      Point d'entrée de l'application : server.js, chargé d'établir les connections aux données, l'accés aux variables
+      d'environnements en important app.js, la base de données
+      NoSQL et les images stockées dans Cloudinary. Une fois ces prérequis faits, server.js lance app.js en écoute pour
+      des requêtes.
+    </p>
+    <div class="image-container-main">
+      <img src="./back/serv.png" alt="server.js VGL">
+    </div>
+    <p>
+      Le fichier app.js décrit l'ordre d'éxecution des différents processus du serveur express : on rend les
+      requêtes/réponses utilisables en format JSON, on parse les cookies pour les rendre utilisables aussi, on autorise
+      les CORS pour qu'un frontend puisse interagir avec le backend depuis une origine différente en utilisant un
+      système d'authentification.
+    </p>
+    <p>
+      Par la suite, on configure notre Swagger, pour aisémment documenter notre API, et enfin on définit le pipeline de
+      notre logique d'utilisation de l'API en déclarant l'utilisation de nos routes, avec un routeur pour chaque modèle,
+      suivi de l'utilisation du
+      middleware d'erreur.
+    </p>
+    <div class="image-container-main">
+      <img src="./back/app.png" alt="app.js VGL">
+    </div>
+    <p>
+      Les routeurs déclarent quels endpoints appellent quels contrôleurs, selon quel verbe HTTP, et quels middlewares
+      doivent être appelés avant le controlleur.
+      Il y a 3 middlewares susceptibles d'etre appelés :</p>
+    <p>-Le middleware d'authentification pour les routes nécessitant
+      d'être un utilisateur connecté.</p>
+    <p>-Le middleware administrateur qui se mettra toujours à la suite de celui
+      d'authentification, pour ensuite s'assurer que l'utilisateur connecté, possède aussi un rôle "admin".</p>
+    <p>-Et enfin, le middleware d'upload de fichier, qui va temporairement allouer de la mémoire sur le serveur, le temps
+      de manipuler le fichier envoyé (via la dépendance Multer) et le rendre utilisable dans la requête fournie au
+      contrôleur par la création de sa propriété "file".
+    </p>
+    <p>
+      Le dernier middleware, celui d'erreur, appelé après le contrôleur en cas d'erreur émises avant ou pendant l'appel
+      du contrôleur, permet quant à lui, de gérer toutes les erreurs au même endroit, en une seule déclaration.</p>
+    <div class="image-container-main">
+      <img src="./back/error5.png" alt="app.js VGL">
+    </div>
+    <p>Par exemple, la ligne qui appelle "User.findById(req.user._id)" sera la même pour tous les contrôleurs qui
+      nécessitent d'être authentifié, si suite à cela on ne trouve pas d'utilisateur, on émettra manuellement la même
+      erreur, qui sera traîtée de la même manière, par une portion unique de notre code : dans notre middleware
+      d'erreur. DRY.</p>
+    <p>De la même manière, lorsque Mongoose, chargé de la validation des données, émettra (naturellement cette fois) une
+      erreur lors d'un
+      "User.create()", ou d'un "user.save()" par exemple, en cas de nom d'utilisateur déjà présent dans la base de
+      donnée, alors que la propriété "username" a été déclarée "unique" dans le schema User, quel que soit le contrôleur
+      qui l'a émise, ce sera la même erreur, et elle sera traîtée au même endroit. DRY.</p>
+    <div class="image-container-main">
+      <img src="./back/error1.png" alt="app.js VGL">
+    </div>
+    <p>L'erreur par défaut de la classe Error ne permet pas de transmettre un code d'erreur personnalisé, qu'à cela ne
+      tienne, on déclare une classe fille de Error : ErrorHandler, qui reprend tous les attributs de sa mère, en y
+      ajoutant ce code désiré.</p>
+    <div class="image-container-main">
+      <img src="./back/error3.png" alt="app.js VGL">
+    </div>
+    <p>Et pour terminer l'explication sur la gestion des erreurs, voici la fonction "wrapper" qui enveloppera toute
+      notre logique asynchrone, et transmettra au middleware d'erreur, les erreurs avec leurs messages et leurs codes si
+      elles ont été lancées avec notre classe fille, ou simplement leur message si elles ont été émises naturellement.
+    </p>
+    <div class="image-container-main">
+      <img src="./back/error4.png" alt="app.js VGL">
+    </div>
+    <p>Cette fonction, évite les répétitions et les nestings illisibles de bloc try-catch, ainsi que tout oubli d'une
+      portion de code qui n'aurait pas été mise dans un bloc try, et pourrait causer le crash du serveur.
+    </p>
+
+    <h3 id="cp7">CP7: Concevoir et mettre en place une base de données relationnelle</h3>
+
+    <div class="warning">
+      <strong>Démonstration de compétence SQL :</strong> Ce projet utilise MongoDB en version finale, mais la première
+      version était entièrement développée avec MariaDB, démontrant ma maîtrise des bases de données relationnelles.
+    </div>
+    <div class="page-break"></div>
+    <h4>Version 1 - Architecture SQL (MariaDB)</h4>
+
+
+    <div class="image-container-main">
+      <img src="./back/MariaDB.png" alt="Schéma BDD SQL VGL">
+    </div>
+    <p>Comme c'est visible sur cette capture d'écran de notre première base de données, les détails de beaucoup de jeux
+      n'ont pas pu être enregistrés depuis l'API steam. En consignant les erreurs de mon scraper dans un errorlog.txt,
+      je me suis aperçu que les problèmes étaient causés par divers facteurs, certaines résolvables comme l'encodage de
+      caractères étrangers, d'autres tout bonnement trop spécifiques, comme des formats de réponses qui rendaient
+      impossible l'automatisation du parsing en JSON. Les détails des jeux ont donc été stockés dans un LONGTEXT en
+      attendant, mais cette table a finalement été abandonnée, au profit d'une collection en NoSQL, beaucoup plus souple
+      pour enregistrer des données aux structures si variables.</p>
+    <div class="page-break"></div>
+    <h4>Version 3 et 4 - Architecture NoSQL (MongoDB)</h4>
+
+
+    <div class="image-container-main">
+      <img src="./back/mongocompass.png" alt="Schéma BDD NoSQL VGL">
+    </div>
+    <p>Sur cette capture d'écran, je montre la structure finale et épurée de la base de données déployée dans le cluster
+      en ligne Atlas. Le dataset des jeux a été limité à 161 jeux, et leurs détails inutilisés pour cette version de
+      l'application,
+      ont été filtrés.
+    </p>
+    <p>On peut également voir la version précédente, celle en local, uniquement sur Compass, qui contient une collection
+      supplémentaire : App,
+      la collection non réduite, dont la taille ne lui permet pas d'être déployée sur le cluster en ligne sans passer
+      aux
+      options payantes.
+    </p>
+
+    <h4>Diagramme de classe de la version finale</h4>
+
+    <p>Seulement deux collections/tables, en relation many-to-many, un utilisateur peut mettre en favoris plusieurs
+      jeux, et un jeu peut être mis en favoris par plusieurs utilisateurs.</p>
+    <p>La jointure se fait sur l'attribut "fav_game_list" de la collection User, qui permet explicitement de retrouver
+      les jeux mis en favoris par leur _id MongoDB, en revanche la collection Game permet uniquement de retrouver le
+      total d'utilisateurs qui ont mis le jeu en favoris, avec son attribut "likes", et ne permet pas de retrouver
+      directement les utilisateurs.</p>
+    <div class="image-container-main">
+      <img src="./Classe UML - Classe UML.png" alt="Diagramme de classe UML VGL">
+    </div>
+    <h3 id="cp8">CP8 - Développer des composants d’accès aux données SQL
+      et NoSQL</h3>
+    <h4>Accés aux données avec le driver MariaDB pour Node.js (Scraper)</h4>
+    <p>On initialise la connexion à notre base de données avec les bons paramètres, et on l'établit en conservant
+      l'objet "conn" qui nous permettra de requêter dessus en langage SQL.</p>
+    <div class="image-container-main">
+      <img src="./createconnmaria.png" alt="Conn MariaDB">
+    </div>
+    <p>Ici, on utilise la méthode asynchrone query() de notre objet, avec une requête SQL au format string passée en
+      unique argument, afin d'afficher le résultat.</p>
+    <div class="image-container-main">
+      <img src="./PRINTMARIA.png" alt="printDetails MariaDB">
+    </div>
+    <p>Ici, la fonction déclarée est une des fonctions utilitaires du scraper, elle permet d'écrire les détails d'un
+      jeu dans la base de données.</p>
+    <div class="image-container-main">
+      <img src="./SETDETAILSMARIA.png" alt="setDetails MariaDB">
+    </div>
+    <div class="warning">
+      <p>Je suis la seule personne à utiliser ce scraper, il n'y a pas besoin de contrôler les requêtes SQL, mais il
+        faudrait bien entendu le faire si d'autres utilisateurs pouvaient utiliser ces fonctions.
+        Une solution par exemple, aurait été d'utiliser la préparation de requêtes sécurisées du driver MariaDB, en
+        mettant des "?" à la place des variables de notre string de requête, et de le passer en premier paramètre à
+        query() avec l'array des variables en second paramètre.</p>
+    </div>
+    <div class="page-break"></div>
+    <h4>Accés aux données avec le driver MongoDB pour Node.js (Scraper)</h4>
+    <p>On initialise la connexion à notre base de données avec les bons paramètres de connexion, on
+      l'établit, et on se place dans la base et dans la collection voulue, grâce à l'objet collection que
+      l'on conservera pour effectuer des requêtes NoSQL.</p>
+    <p>J'ai mis ici, le cas le plus "complexe" du requêtage en NoSQL, les pipelines d'agrégation : on prépare
+      plusieurs
+      requêtes, séquentiellement, en utilisant comme entrée d'une requête, la sortie de la précédente.
+    </p>
+    <p>Ici, on sélectionne les documents vérifiant nos critères ($match), puis on filtre ce que l'on veut conserver d'eux
+      comme propriétés ($project). On obtiendra les jeux
+      purs et pas les DLCs ("detail.type" : "game"), dont les détails on été récupérés depuis l'API Steam (detail: {
+      $ne: null }), et qui ont été traités par mon scraper (treated: 1), et ne conserveront pas leurs propriétés "_id" et "treated".</p>
+    <div class="image-container-main">
+      <img src="./mongoDBconn.png" alt="Conn MongoDB">
+    </div>
+    <h4>Accés aux données avec Mongoose (Backend)</h4>
+    <p>
+      Comme je l'expliquais quand je parlais de l'architecture du backend, parmi les premières instructions exécutées
+      par le serveur express à son lancement, l'une d'elle est de configurer l'accés aux variables d'environnement, avant
+      d'initialiser la connection à la base de données en appelant la fonction connectDB() :
+    </p>
+    <div class="image-container-main">
+      <img src="./mongooseconn.png" alt="Conn Mongooose">
+    </div>
+    <p>
+      L'avantage de Mongoose réside dans l'utilisation de ses schémas pour valider simplement et automatiquement les
+      données, mais aussi dans l'UX par rapport aux interactions avec l'utilisateur.
+      Ici par exemple, on s'assure que les jeux ont un steam_appid renseigné, unique et numérique, ainsi qu'un nom, sans quoi l'utilisateur de l'API sera avertit par
+      les messages définis.
+    </p>
+    <div class="image-container-narrow">
+      <img src="./modeleGame.png" alt="Game Model">
+    </div>
+    <p>
+      Par la suite, les contrôleurs n'ont plus qu'à importer notre modèle pour l'utiliser avec ses fonctions natives
+      Mongoose, Game.findById(), Game.find() qui permettent d'accéder en lecture aux instances recherchées (Read),
+      Game.create() qui permet d'ajouter un document à la collection (Create), instances elles mêmes
+      pourvues de méthodes, comme instance.save() (Update) ou instance.deleteOne() (Delete) par exemple.
+    </p>
+    <div class="image-container-main">
+      <img src="./updateprofiel.png" alt="update profile">
+    </div>
+
+    <h2 id="activite3">ACTIVITÉ TYPE 3 – PRÉPARER LE DÉPLOIEMENT D’UNE APPLICATION SÉCURISÉE</h2>
+    <h3 id="cp9">CP9 - Préparer et exécuter les plans de tests d’une
+      application</h3>
+    <div class="warning">
+      Par raison de manque de temps, les tests n'ont pas pu tous être faits, je me suis focalisé uniquement sur les
+      tests unitaires pour en démontrer ma maîtrise, et encore, ce n'est que pour quelques composants pour le frontend,
+      et un
+      set de contrôleurs complet CRUD pour le backend.
+    </div>
+    <h4>Tests unitaires du backend</h4>
+    <p>
+      On initialise les tests des contrôleurs en mockant les objets et leurs fonctions, on ne souhaite pas tester leur
+      logique, uniquement celle des contrôleurs.
+    </p>
+    <div class="image-container-main">
+      <img src="./initialisation des tests back.png" alt="tests back init">
+    </div>
+
+    <p>
+      On teste ensuite un à un les contrôleurs, avec la méthode Jest "describe", et on couvre la plupart des cas de
+      figure avec la méthode "it". Je me contenterai ici, de montrer mon test pour le contrôleur chargé de retourner
+      l'utilisateur connecté, il couvre le cas où le paramètre "_id" du user connecté retourne bien un utilisateur
+      (succés 200), celui où il n'en retourne pas (erreur 401), et celui où il est invalide (erreur 500) :
+    </p>
+    <div class="image-container-main">
+      <img src="./gettest.png" alt="gettests">
+    </div>
+    <h4>Tests unitaires du frontend</h4>
+    <p>
+      Je me contenterai de montrer la méthodologie de test de mon composant extrêmement simple "Loader" :
+      j'attribue un prop testID aux sous-composants le constituant, de manière à les mocker facilement depuis le fichier
+      test correspondant.
+    </p>
+    <div class="image-container-main">
+      <img src="./loader.png" alt="loader">
+    </div>
+    <p>
+      On utilsera les mêmes méthodes Jest que dans le backend, puis on fera s'afficher notre composant mocké, ici un simple
+      ActivityIndicator de react-native-paper avec certains props, dans un environnement de test. On testera dans
+      l'ordre :
+    </p>
+    <p>
+      -Que l'affichage se fait correctement.
+    </p>
+    <p>
+      -Que chacun de ses props, un test pour chaque, possède bien les valeurs attendues (style, size et puis color).
+    </p>
+    <p>
+      -Et que le DOM possède bien la même valeur HTML que la dernière fois qu'on a affiché notre Loader dans
+      l'environnement de test, et à défaut, si c'est son premier affichage, enregistre juste la valeur du DOM. On
+      parlera
+      de snapshots pour les captures du DOM à différents instants.
+    </p>
+    <div class="image-container-main">
+      <img src="./loadertest.png" alt="test loader">
+    </div>
+    <div class="page-break"></div>
+    <h4>Workflow github pour exécuter les tests à chaque push et pull request</h4>
+    <p>
+      J'ai également mis en place un pipeline CI/CD avec un workflow Github, de manière à lancer les tests à chaque
+      modification faite au repository du backend.
+    </p>
+    <p>
+      J'ai simplement rajouté un fichier test.yml dans .github/workflows, dans lequel je demande de récupérer le
+      repository, d'y installer Node.js et les dépendances du package.json, et de lancer le script de test.
+    </p>
+    <div class="image-container-narrow">
+      <img src="./testyaml.png" alt="testyaml">
+    </div>
+    <p>
+      Dorénavant, lorsque l'on apportera des modifications au backend sur github, les tests se lanceront de manière
+      automatique, et si la logique des contrôleurs testés a été cassée par ces modifications, cela bloquera les
+      déploiements sur render censés se faire, eux aussi, automatiquement.
+    </p>
+    <div class="image-container-narrow">
+      <img src="./back/CICDtests.png" alt="CICD">
+    </div>
+
+    <h3 id="cp10">CP10 - Préparer et documenter le déploiement d’une
+      application</h3>
+    <h4>Deploiement</h4>
+    <p>Pour déployer sur render, j'ai d'abord dû déployer ma base de données en ligne, je suis donc passé sur MongoDB
+      Atlas et
+      son offre gratuite, en limitant mon dataset de jeux.</p>
+    <p>L'offre gratuite de render est relativement inadaptée pour la mise en production. En effet cela coupe le serveur
+      en
+      cas
+      d'inactivité, qui mettra environ 50 secondes à se relancer à la première requête faite, mais aussi attribue des
+      adresses IP dynamiques à notre backend. J'ai donc dû autoriser toutes les adresses IP à pouvoir se connecter à ma
+      base de données en ligne, ce qui est une faille de sécurité à absolument éviter en cas de mise en production.</p>
+    <p>Hormis cela, le déploiement est extrêmement fiable et rapide, et se refait automatiquement à chaque modification
+      du repository
+      (ayant validé le pipeline de tests).</p>
+    <p>J'ai pour le moment, gardé exactement les mêmes variables d'environnement que dans le config.env, même pour les
+      paramètres SMTP : j'ai gardé Mailtrap. Je modifierai cela avec de vrais mails lorsque je déploierai de manière sécurisée
+      avec une IP fixe. J'ai simplement lancé le serveur en mode production, et pas développement comme je le faisais en
+      local. Il a donc fallu rajouter la variable d'environnement NODE_ENV qui était jusque là indépendante du
+      config.env, et était initialisée en fonction du script choisi pour lancer le serveur dans sa version locale.</p>
+    <h4>Documentation</h4>
+    <p>Pour documenter mon API j'ai utilisé Swagger, je l'ai simplement configuré en lui renseignant les schémas Game et
+      User, et l'emplacement de mes routes, routes que j'ai fait annoter par l'IA (ChatGPT) en lui renseignant la
+      logique de mes contrôleurs.</p>
+    <div class="links">
+      <p><strong>Documentation API Swagger :</strong>
+        <a href="https://vglserver.onrender.com/api/v1/docs/" target="_blank">
+          https://vglserver.onrender.com/api/v1/docs/
+        </a>
+      </p>
+    </div>
+
+    <h3 id="cp11">CP11 - Contribuer à la mise en production dans une démarche
+      DevOps</h3>
+    <p>Des peu de démarches DevOps que nous avions étudiées dans notre formation CDA, j'ai déjà mentionné les pipelines
+      CI/CD mis en place dans le CP précédent, seule n'a pas été abordée la conteneurisation, que j'ai choisi de ne pas
+      mettre en place pour ce projet, conforté par la politique de déploiement sur render, qui recommande de ne pas
+      utiliser docker pour un serveur Express.js.</p>
+    <p>J'ai de quoi parler de la conteneurisation sur mon dossier professionnel, j'y ai été suffisamment confronté en
+      entreprise.</p>
+
+
+
+    <div class="page-break"></div>
+
+    <!-- CAHIER DES CHARGES -->
+    <h2 id="cahier-charges">CAHIER DES CHARGES</h2>
+
+    <h3>Spécifications fonctionnelles</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Fonctionnalité</th>
+            <th>Description</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3">Authentification</td>
+            <td>Inscription</td>
+            <td>Création de compte utilisateur</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Connexion</td>
+            <td>Authentification JWT</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Mot de passe oublié</td>
+            <td>Réinitialisation par e-mail</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td rowspan="4">Catalogue</td>
+            <td>Liste des jeux</td>
+            <td>Infinite scroll avec 300k+ jeux</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Recherche</td>
+            <td>Recherche par nom</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Filtres</td>
+            <td>Filtrage par critères multiples</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Détails</td>
+            <td>Fiche complète du jeu</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="cellwhite">Personnalisation</td>
+            <td>Favoris</td>
+            <td>Gestion des jeux favoris</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Recommandations</td>
+            <td>Algorithme basé sur les favoris</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Profil</td>
+            <td>Photo de profil</td>
+            <td>Upload/prise de photo</td>
+            <td>✅</td>
+          </tr>
+          <tr>
+            <td>Préférences</td>
+            <td>Paramètres utilisateur</td>
+            <td>✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Spécifications techniques</h3>
+    <h4>Frontend</h4>
+    <ul>
+      <li><strong>Environnement :</strong> Node.js</li>
+      <li><strong>Framework :</strong> React Native avec Expo</li>
+      <li><strong>Navigation :</strong> React Navigation</li>
+      <li><strong>Responsivité :</strong> Flexbox, dimensions relatives, Dimensions API</li>
+      <li><strong>Gestion d'images :</strong> Interface caméra et upload (traitement backend via Cloudinary)</li>
+      <li><strong>Cible :</strong> Android (responsive sur tous types d'écrans)</li>
+    </ul>
+
+    <h4>Backend</h4>
+    <ul>
+      <li><strong>Environnement :</strong> Node.js</li>
+      <li><strong>Framework :</strong> Express.js</li>
+      <li><strong>Base de données :</strong> MongoDB avec Mongoose</li>
+      <li><strong>Authentification :</strong> JWT</li>
+      <li><strong>Webscraping :</strong> Cheerio (usage éducatif)</li>
+      <li><strong>Stockage :</strong> Cloudinary</li>
+      <li><strong>Déploiement :</strong> Render</li>
+    </ul>
+
+    <h3>Contraintes et exigences</h3>
+    <h4>RGPD et Protection des données</h4>
+    <ul>
+      <li>Hashage sécurisé des mots de passe (bcrypt)</li>
+      <li>Consentement explicite pour la collecte de données</li>
+      <li>Droit à l'effacement des données utilisateur</li>
+      <li>Stockage minimal des données personnelles</li>
+    </ul>
+
+    <h4>Éco-conception</h4>
+    <ul>
+      <li>Mode sombre</li>
+      <li>Optimisation des requêtes base de données</li>
+      <li>Lazy loading des images (à implémenter)</li>
+      <li>Réduction du dataset pour limiter l'empreinte serveur</li>
+      <li>Cache intelligent pour éviter les recalculs</li>
+      <li>Mise en cache avec Redis (à implémenter)</li>
+    </ul>
+
+    <h4>Accessibilité</h4>
+    <ul>
+      <li>Contrastes suffisants pour la lisibilité</li>
+      <li>Tailles de police adaptatives</li>
+      <li>Traduction multi-lingue, à implémenter avec les aria-label pour TalkBack sur Android</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- RÉALISATIONS -->
+    <h2 id="realisations">RÉALISATIONS</h2>
+
+    <h3>Présentation d'une réalisation</h3>
+    <p>Le système de recommandations personnalisées constitue une réalisation technique majeure qui illustre
+      l'approche logique, alorithmique et mathématique du développement.</p>
+
+    <h4>Défis techniques relevés :</h4>
+    <ul>
+      <li><strong>Performance :</strong> Algorithme optimisé O(1) avec cache ou O(n*log(n)) sinon</li>
+      <li><strong>Personnalisation :</strong> Analyse des tags de favoris</li>
+      <li><strong>Évolutivité :</strong> Gestion intelligente des ex-aequo</li>
+    </ul>
+
+    <h3>Regard critique sur la prestation réalisée</h3>
+
+    <h4>Points forts</h4>
+    <ul>
+      <li><strong>Architecture évolutive :</strong> Passage réussi du SQL au NoSQL</li>
+      <li><strong>Performance :</strong> Gestion de 300k+ jeux avec infinite scroll fluide</li>
+      <li><strong>Innovation :</strong> Algorithme de recommandation original</li>
+      <li><strong>Design responsive :</strong> Application adaptative sur tous écrans</li>
+      <li><strong>Experience responsive :</strong> Application jamais irresponsive</li>
+      <li><strong>Webscraping éthique :</strong> Récupération légale de données</li>
+    </ul>
+
+    <h4>Points d'amélioration</h4>
+    <ul>
+      <li><strong>Tests automatisés :</strong> Couverture de tests à améliorer</li>
+      <li><strong>Monitoring :</strong> Système d'alertes à implémenter</li>
+      <li><strong>Cache distribué :</strong> Redis pour améliorer les performances</li>
+      <li><strong>Pagination stable :</strong> Solution pour données volatiles (planifiée)</li>
+    </ul>
+    <h4>Stratégie future pour données volatiles (non implémentée)</h4>
+    <div class="info">
+      <strong>Problématique identifiée :</strong> Les données comme le nombre de likes évoluent en temps réel et
+      peuvent
+      casser la pagination en modifiant l'ordre d'un ensemble trié.
+    </div>
+    <p>Solution envisagée : Système de sauvegarde des likes à la même heure chaque jour (celle où il y a le moins
+      d'utilisateurs en moyenne), utilisation de la sauvegarde quotidienne pour le tri, et envoyer un signal aux
+      frontends en train de paginer au moment de la sauvegarde, pour qu'ils réinitialisent leurs infinite scrolls à
+      leurs débuts, recommençant ainsi l'ordonnancement avec la nouvelle valeur.</p>
+    <h3>Description d'une situation de travail ayant nécessité une recherche</h3>
+
+    <h4>Problématique 1 : Choix technologique MongoDB/Mongoose</h4>
+    <p><strong>Contexte :</strong> Performance sur un dataset de 300 000+ jeux avec infinite scroll</p>
+
+    <p><strong>Recherche menée :</strong></p>
+    <ul>
+      <li>Analyse comparative driver natif vs Mongoose</li>
+      <li>Tests de charge sur l'infinite scroll</li>
+      <li>Évaluation validation automatique vs performance brute</li>
+      <li>Étude des bonnes pratiques MongoDB</li>
+    </ul>
+
+    <p><strong>Solution retenue :</strong> Mongoose - Les pertes de performance étaient imperceptibles sur l'infinite
+      scroll, les avantages en validation de données étaient significatifs.</p>
+
+    <h4>Problématique 2 : Surveillance des dépendances externes</h4>
+    <p><strong>Contexte :</strong> Dépendance critique à la structure HTML du site Steam</p>
+
+    <p><strong>Recherche menée :</strong></p>
+    <ul>
+      <li>Étude des stratégies de monitoring HTML</li>
+      <li>Recherche sur les alternatives au webscraping</li>
+      <li>Analyse des APIs officielles disponibles</li>
+    </ul>
+
+    <p><strong>Solution retenue :</strong> Système de tests automatisés pour détecter les changements de structure</p>
+
+    <h4>Problématique 3 : Calculs des worst case scenarios de la responsivité UI</h4>
+    <p><strong>Contexte :</strong> Dépendance au ratio hauteur/largeur d'écran pour l'affichage</p>
+
+    <p><strong>Recherche menée :</strong></p>
+    <ul>
+      <li>Étude des différents affichages materiels</li>
+      <li>Raisonnement analytique</li>
+      <li>Calcul géométrique par rapport à mon propre smartphone</li>
+    </ul>
+
+    <p><strong>Solution retenue :</strong> Système de proportionnalité à la largeur d'écran</p>
+    <div class="warning">
+      <p>Futurs composants, potentiellement encore plus verticaux que les GameCards, à prendre en compte.</p>
+    </div>
+
+    <h3>Veille sur les dépendances tierces</h3>
+
+    <h4>Dépendances critiques surveillées</h4>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Dépendance</th>
+            <th>Criticité</th>
+            <th>Risques</th>
+            <th>Stratégie de veille</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>React Native/Expo</td>
+            <td>🔴 Haute</td>
+            <td>Breaking changes fréquents</td>
+            <td>Newsletter officielle, tests réguliers</td>
+          </tr>
+          <tr>
+            <td>Mongoose</td>
+            <td>🟡 Moyenne</td>
+            <td>Évolutions performance</td>
+            <td>Release notes, tests de structures</td>
+          </tr>
+          <tr>
+            <td>Cheerio</td>
+            <td>🟢 Faible</td>
+            <td>Compatibilité Node.js</td>
+            <td>Tests de compatibilité</td>
+          </tr>
+          <tr>
+            <td>Structure HTML Steam</td>
+            <td>🟢 Faible</td>
+            <td>Arrêt total du scraping</td>
+            <td>Tests automatisés quotidiens</td>
+          </tr>
+          <tr>
+            <td>Atlas</td>
+            <td>🟡 Moyenne</td>
+            <td>Limitations évolutives</td>
+            <td>Monitoring performances</td>
+          </tr>
+          <tr>
+            <td>Render</td>
+            <td>🟡 Moyenne</td>
+            <td>Limitations évolutives</td>
+            <td>Monitoring performances</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Plan de continuité</h4>
+    <p>
+      Plannifier des cronjobs pour tester les structures, et alerter en cas de changement (cronjobs déjà prévus pour
+      automatiser le scraping)
+    </p>
+
+    <div class="page-break"></div>
+
+
+    <h3>Tests manuels via Swagger</h3>
+    <div class="links">
+      <p><strong>Documentation API Swagger :</strong>
+        <a href="https://vglserver.onrender.com/api/v1/docs/" target="_blank">
+          https://vglserver.onrender.com/api/v1/docs/
+        </a>
+      </p>
+    </div>
+    <p>Tests Postman à finir d'implémenter pour automatiser</p>
+
+    <h4>Suite de tests principaux :</h4>
+    <ul>
+      <li>Tests d'authentification (signup, login, lgout)</li>
+      <li>Tests CRUD utilisateurs</li>
+      <li>Tests endpoints jeux (liste, recherche, détails)</li>
+      <li>Tests gestion favoris</li>
+      <li>Tests recommandations</li>
+      <li>Tests webscraping</li>
+      <li>Tests upload d'images</li>
+    </ul>
+
+    <h3>Tests d'intégration</h3>
+    <p>Faire la couverture sur les tests d'intégration, et implémenter en CI/CD</p>
+
+    <h3>Tests unitaires</h3>
+    <p>Augmenter la couverture à toutes les routes, et tous les composants</p>
+
+    <h3>Tests de sécurité</h3>
+    <p>Faire la couverture sur les tests de sécurité, tester la resilience aux injections NoSQL, et implémenter en CI/CD
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- CONCLUSION -->
+    <h2 id="conclusion">CONCLUSION</h2>
+
+    <h3>Objectifs atteints</h3>
+    <p>Le projet VGL m'a permis de développer puis démontrer une maîtrise approfondie du développement et déploiement
+      d'applications
+      multi-couches :</p>
+
+    <ul>
+      <li><strong>Application mobile native</strong> : React Native/Expo avec interface responsive</li>
+      <li><strong>API REST robuste</strong> : Node.js/Express avec documentation complète</li>
+      <li><strong>Gestion de données massives</strong> : 300k+ jeux avec performance optimisée</li>
+      <li><strong>Innovation algorithmique</strong> : Système de recommandations personnalisées</li>
+      <li><strong>Webscraping éthique</strong> : Enrichissement automatisé des données</li>
+      <li><strong>Architecture évolutive</strong> : Migration réussie du SQL au NoSQL</li>
+      <li><strong>Bonnes pratiques</strong> : RGPD, accessibilité, éco-conception</li>
+    </ul>
+
+    <h3>Critique sur moi-même et mon travail</h3>
+    <p>J'ai totalement mal estimé le temps qu'il me fallait pour faire certaines tâches, et le MVP imaginé, trop
+      important, a dû être
+      réduit. Je n'estime bien le temps
+      nécessaire que lorsque je maîtrise la tâche, or j'ai toujours voulu implémenter LA feature que je ne savais pas
+      faire. Je ne regrette rien en soi, c'est comme cela qu'on apprend, si je devais refaire un projet, sans nulle
+      doute
+      que je recommencerais encore
+      quelque chose de nouveau et sur une nouvelle technologie, mais j'essaierais de trouver un projet avec des tâches
+      moins intriquées, pour les faire de manière plus séquentielles et les finaliser convenablement une à une.</p>
+    <p>En somme :
+      partir d'un MVP minimal, qui ne fait que grossir.</p>
+    <h3>Évolutions possibles du projet</h3>
+    <p>
+      -Système d'interactions entre les utilisateurs avec un espace commentaires sous la page des jeux, c'est déjà prévu
+      via l'implémentation des noms d'utilisateurs uniques, en effet, si les utilisateurs signaient leurs commentaires
+      avec leurs adresses e-mails, cela poserait un grave problème de sécurité. </p>
+    <p>
+      -Système d'actualités E-sport, grâce à la récupération automatisée de données via des APIs externes, et l'ajout de
+      préférences utilisateurs plus poussées. </p>
+    <p>
+      -Système de partenariat commercial avec des marques de marchandises centrées autour des jeux, avec recommandations
+      de marchandises à l'utilisateur en fonction de ses préférences. </p>
+    <p>
+      -Traduction multilingue exhaustive pour ne se fermer à aucun marché.</p>
+    <p>
+      -Implémentations des meilleures pratiques autour de l'accessibilité.</p>
+    <p>
+      -Marché iOS et web à conquérir.</p>
+  </div>
+</body>
