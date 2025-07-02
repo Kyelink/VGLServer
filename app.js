@@ -316,7 +316,7 @@ const __dirname = path.dirname(fileURLToPath(new URL(import.meta.url)));
 
 app.use(express.static(path.join(__dirname, 'dossierproj')));
 
-app.get('/api/v1/dossier', (req, res) => {
+app.get('/dossier', (req, res) => {
     res.sendFile(path.join(__dirname, 'dossierproj', 'dossierproj.html'));
 });
 app.use(errorMiddleware);
